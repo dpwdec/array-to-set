@@ -1,6 +1,8 @@
-from typing import List
+from typing import List, Set
 
-def array_to_sets(arr: List) -> List:
+# simplest recursive solution
+# requires mutating arrays and sets
+def array_to_sets(arr: List) -> List[Set]:
     s = set()
     for x in arr:
         if x not in s:

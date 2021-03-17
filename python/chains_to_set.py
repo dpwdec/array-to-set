@@ -1,5 +1,11 @@
-from typing import List
+from typing import List, Set
 
+# REDUNDANT NOW, old solution for getting unique element ordered array
+
+def array_to_sets(arr: List) -> List[Set]:
+    return chain_to_sets(array_to_sets(arr))
+
+# run time efficient solution
 # function assumes array is sorted
 def array_to_chain(nums: List[int]) -> List[int]:
     if len(nums) <= 2: return nums
@@ -26,6 +32,8 @@ def chain_to_sets(arr):
             s.add(x)
         else:
             sets.append(s)
-            s = set()
+            s = set([x])
     
     return sets
+
+print(chain_to_sets([1, 2, 3, 1]))
