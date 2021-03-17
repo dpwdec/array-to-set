@@ -1,4 +1,7 @@
-def array_to_set(nums: list) -> list:
+from typing import List
+
+# function assumes array is sorted
+def array_to_set(nums: List[int]) -> List[int]:
     if len(nums) <= 2: return nums
 
     # destructure array
